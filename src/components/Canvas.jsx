@@ -15,7 +15,7 @@ export default function CanvasComponent() {
                 camera={cameraSettings}
             >
                 <OrbitControls/>
-                <mesh>
+                <mesh> 
                     <boxGeometry/>
                     <meshBasicMaterial color="red" />
                 </mesh>
