@@ -1,9 +1,11 @@
 'use client';
 
-import useMacbookStore from "@/store";
 import clsx from "clsx";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+
+import useMacbookStore from "@/store";
+import Macbook14 from "./Macbook14";
 
 export default function ProductViewer() {
     const color = useMacbookStore((state)=>(state.color))
@@ -53,10 +55,10 @@ export default function ProductViewer() {
             <Canvas id="canvas"
                 camera={cameraSettings}
             >
-                <mesh>
-                    <boxGeometry />
-                    <meshBasicMaterial color="red" />
-                </mesh>
+                <OrbitControls enableZoom={false} />
+                <ambientLight intensity={6}/>
+                <directionalLight intensity={5} />
+                <Macbook14 scale={0.06} position={[0, 0, 0]} />
             </Canvas>
         </section >
     )
