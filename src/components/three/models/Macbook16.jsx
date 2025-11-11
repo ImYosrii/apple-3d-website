@@ -1,8 +1,22 @@
 import { useGLTF, useTexture } from '@react-three/drei'
+import useMacbookStore from '@/store'
+import { useEffect } from 'react'
+import { noChangeParts } from '@/constants'
 
-export function Macbook16(props) {
-    const { nodes, materials } = useGLTF('/models/macbook-16.glb')
+
+export default function Macbook16(props) {
+    const { nodes, materials, scene} = useGLTF('/models/macbook-16.glb')
     const texture = useTexture("/screen.png")
+    const color = useMacbookStore((state)=>(state.color))
+
+    useEffect(()=>{
+        scene.traverse((child)=>{
+            if(child.isMesh && !noChangeParts.includes(child.name)){
+                child.material.color.set(color)
+            }
+        })
+    }, [color])
+
     
     return (
         <group {...props} dispose={null}>

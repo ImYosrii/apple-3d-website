@@ -2,16 +2,19 @@
 
 import clsx from "clsx";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { useMediaQuery } from "react-responsive";
 
 import useMacbookStore from "@/store";
-import Macbook14 from "./Macbook14";
+import Lights from "./three/Lights";
+import ModelsSwitcher from "./three/ModelsSwitcher";
 
 export default function ProductViewer() {
     const color = useMacbookStore((state)=>(state.color))
     const setColor = useMacbookStore((state)=>(state.setColor))
     const scale = useMacbookStore((state)=>(state.scale))
     const setScale = useMacbookStore((state)=>(state.setScale))
+    const isMobile = useMediaQuery({query: "(max-width: 1024px)"})
+
 
     const cameraSettings = {
         fov: 50,
@@ -26,8 +29,7 @@ export default function ProductViewer() {
 
             <div className="controls">
                 <p className="info">
-                    Macbook Pro 16" in Silver/ Space Black
-                </p>
+                    Macbook Pro | Available in 14" & 16" in Space Gray & Dark Colors                </p>
 
                 <div className="flex-center gap-5 mt-5">
                     <div className="color-control">
@@ -55,10 +57,8 @@ export default function ProductViewer() {
             <Canvas id="canvas"
                 camera={cameraSettings}
             >
-                <OrbitControls enableZoom={false} />
-                <ambientLight intensity={6}/>
-                <directionalLight intensity={5} />
-                <Macbook14 scale={0.06} position={[0, 0, 0]} />
+                <Lights />
+                <ModelsSwitcher scale={isMobile ? scale - 0.03 : scale} isMobile={isMobile} />
             </Canvas>
         </section >
     )
