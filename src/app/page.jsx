@@ -1,11 +1,12 @@
 import CanvasComponent from "@/components/Canvas";
 import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
-    <div>
+    <main>
       <Navbar />
-      <h1 className="text-3xl font-bold underline">Welcome to the Apple Website</h1>
-    </div>
+      <Hero />
+    </main>
   );
 }

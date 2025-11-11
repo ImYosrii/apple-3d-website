@@ -1,0 +1,7 @@
+{
+  // Ignore unknown at-rule warnings from the built-in CSS/SCSS/LESS language features
+  // This is useful when using PostCSS/Tailwind/other tools that introduce custom at-rules
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "less.lint.unknownAtRules": "ignore"
+}
