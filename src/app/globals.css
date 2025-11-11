@@ -163,7 +163,7 @@ body {
         }
 
         .active {
-          @apply ring-5 size-5 ring-light-100;
+          @apply ring-5 size-5 ring-gray-500;
         }
       }
 

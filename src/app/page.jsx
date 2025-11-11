@@ -1,12 +1,13 @@
-import CanvasComponent from "@/components/Canvas";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import ProductViewer from "@/components/ProductViewer";
 
 export default function Home() {
   return (
     <main>
       <Navbar />
       <Hero />
+      <ProductViewer /> 
     </main>
   );
 }
