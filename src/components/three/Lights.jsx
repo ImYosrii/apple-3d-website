@@ -43,7 +43,7 @@ export default function Lights() {
                 position={[-2, 20, 5]}
                 angle={0.15}
                 decay={0}
-                intensity={0.1}
+                intensity={2}
             />
             <spotLight 
                 position={[0, -25, 10]}
