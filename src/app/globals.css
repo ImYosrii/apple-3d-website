@@ -90,7 +90,7 @@ body {
 
 @layer components {
   header {
-    @apply w-screen fixed top-0 left-0 z-50 flex-center bg-black min-h-[7vh];
+    @apply w-screen fixed top-0 left-0 z-500 flex-center bg-black min-h-[7vh];
 
     nav {
       @apply container mx-auto flex-between px-5 2xl:px-0;
@@ -271,7 +271,7 @@ body {
       @apply mx-auto max-w-xl mt-24;
 
       p {
-        @apply lg:h3-semibold base-semibold text-center translate-y-10 opacity-0 px-5;
+        @apply lg:h3-semibold base-semibold text-center px-5;
       }
     }
   }
