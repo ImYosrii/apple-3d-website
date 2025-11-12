@@ -71,13 +71,13 @@ export default function Performance(){
             </h2>
 
             <div className="wrapper">
-                <img className="p1" src="/performance1.png"/>
-                <img className="p2" src="/performance2.png"/>
-                <img className="p3" src="/performance3.png"/>
-                <img className="p4" src="/performance4.png"/>
-                <img className="p5" src="/performance5.jpg"/>
-                <img className="p6" src="/performance6.png"/>
-                <img className="p7" src="/performance7.png"/>
+                <img className="p1" src="/performance1.png" alt="performance image1"/>
+                <img className="p2" src="/performance2.png" alt="performance image2"/>
+                <img className="p3" src="/performance3.png" alt="performance image3"/>
+                <img className="p4" src="/performance4.png" alt="performance image4"/>
+                <img className="p5" src="/performance5.jpg" alt="performance image5"/>
+                <img className="p6" src="/performance6.png" alt="performance image6"/>
+                <img className="p7" src="/performance7.png" alt="performance image7"/>
             </div>
 
             <div className="content">
