@@ -62,7 +62,7 @@ export default function Performance(){
 
         
         
-    }, [isMobile])
+    }, [isMobile, isTablet])
 
     return (
         <section id='performance'>
