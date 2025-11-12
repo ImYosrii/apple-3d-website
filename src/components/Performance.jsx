@@ -6,6 +6,7 @@ import { performanceImgPositions } from "@/constants"
 
 export default function Performance(){
     const isMobile = useMediaQuery({query:"(max-width: 1024px)"})
+    const isTablet = useMediaQuery({query:"(max-width: 1024px)"}) && useMediaQuery({query:"(min-width: 500px)"})
 
     useGSAP(()=>{
         gsap.fromTo(
@@ -25,14 +26,13 @@ export default function Performance(){
             }
         )
         
-        if(isMobile) return;
+        if(isMobile && !isTablet) return;
 
         const timeline = gsap.timeline({
-            // TODO: make animations and better positions for tablet and phone
             defaults: {ease: "power1.inOut", overwrite:'auto' }, 
             scrollTrigger: {
                 trigger: "#performance",
-                start: 'top bottom',
+                start: 'center bottom',
                 end: 'center center',
                 scrub: 1,
                 invalidateOnRefresh: true,
@@ -44,10 +44,18 @@ export default function Performance(){
 
             const posSettings = {
             }
+            
+            if(isTablet){
+                if(pos.tablet.left) posSettings.left = `${pos.tablet.left}%`
+                if(pos.tablet.right) posSettings.right = `${pos.tablet.right}%`
+                if(pos.tablet.bottom) posSettings.bottom = `${pos.tablet.bottom}%`
 
-            if(pos.left) posSettings.left = `${pos.left}%`
-            if(pos.right) posSettings.right = `${pos.right}%`
-            if(pos.bottom) posSettings.bottom = `${pos.bottom}%`
+            }
+            else{
+                if(pos.desktop.left) posSettings.left = `${pos.desktop.left}%`
+                if(pos.desktop.right) posSettings.right = `${pos.desktop.right}%`
+                if(pos.desktop.bottom) posSettings.bottom = `${pos.desktop.bottom}%`
+            }
 
             timeline.to(`.${pos.id}`, posSettings, 0)
         })
