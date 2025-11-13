@@ -1,7 +1,5 @@
 import { Canvas } from "@react-three/fiber"
-import Macbook from "./three/models/Macbook"
 import Lights from "./three/Lights"
-import { featureSequence } from "@/constants"
 import { features } from "@/constants"
 import clsx from "clsx"
 import ModelScroll from "./three/ModelScroll"
