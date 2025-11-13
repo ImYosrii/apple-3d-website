@@ -31,7 +31,7 @@ export default function ProductViewer() {
                 <p className="info">
                     Macbook Pro | Available in 14" & 16" in Multiple Colors</p>
 
-                <div className="flex-center gap-5 mt-5">
+                <div className="flex-center gap-5 mt-5 max-sm:flex-col">
                     <div className="color-control">
                         <div onClick={()=>setColor("#adb5bd")} 
                          className={clsx("bg-neutral-300", color === "#adb5bd" && 'active')}></div>

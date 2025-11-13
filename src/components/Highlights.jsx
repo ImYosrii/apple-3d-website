@@ -9,7 +9,7 @@ export default function Highlights(){
         const timeLine = gsap.timeline({
             scrollTrigger: {
                 trigger: "#highlights",
-                start: isMobile ? "bottom bottom" : "center top",
+                start: isMobile ? "center bottom" : "center top",
                 scrub: 1,
                 invalidateOnRefresh: true,
             }

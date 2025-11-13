@@ -68,6 +68,10 @@ body {
   @apply flex items-center justify-between;
 }
 
+@utility flex-around {
+  @apply flex items-center justify-around;
+}
+
 @utility col-center {
   @apply flex flex-col items-center justify-center;
 }
@@ -149,7 +153,7 @@ body {
     }
 
     .controls {
-      @apply absolute z-50 bottom-40 lg:bottom-40 2xl:bottom-52 left-1/2 -translate-x-1/2;
+      @apply absolute z-50 bottom-22 lg:bottom-40 2xl:bottom-52 left-1/2 -translate-x-1/2;
 
       .info {
         @apply text-xs text-white bg-black/20 px-2 py-1 rounded-lg ml-10;
@@ -177,7 +181,7 @@ body {
     }
 
     #canvas {
-      @apply !w-full !h-[80vh] lg:!h-dvh relative z-40;
+      @apply !w-full !h-[80vh] lg:!h-dvh relative z-40 touch-none;
     }
   }
 
@@ -341,7 +345,7 @@ body {
           @apply font-semibold text-4xl max-w-2xs;
         }
         .apple-gradient {
-          @apply p-10 rounded-3xl flex items-center gap-7 relative;
+          @apply max-sm:px-2 p-10 rounded-3xl flex items-center gap-7 relative;
 
           background: #1d1d1f;
           background-clip: padding-box; /* !important */
