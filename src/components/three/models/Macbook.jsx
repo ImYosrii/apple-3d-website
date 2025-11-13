@@ -1,6 +1,23 @@
-import { useGLTF } from '@react-three/drei'
+import { useGLTF, useVideoTexture } from '@react-three/drei'
+import useMacbookStore from '@/store'
+import { useEffect } from 'react'
+import { noChangeParts } from '@/constants'
 
-export default function Macbook(props) {  const { nodes, materials } = useGLTF('/models/macbook.glb')
+export default function Macbook(props) {  
+  const color = useMacbookStore((state)=>(state.color))
+  const texture = useMacbookStore((state)=>(state.texture))
+  const { nodes, materials, scene } = useGLTF('/models/macbook.glb')
+
+  const screen = useVideoTexture(texture)
+
+  useEffect(()=>{
+    scene.traverse((child)=>{
+      if(child.isMesh && !noChangeParts.includes(child.name)){
+        child.material.color.set(color)
+      }
+    })
+  }, [color])
+
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -126,9 +143,10 @@ export default function Macbook(props) {  const { nodes, materials } = useGLTF('
         castShadow
         receiveShadow
         geometry={nodes.Object_123.geometry}
-        material={materials.sfCQkHOWyrsLmor}
         rotation={[Math.PI / 2, 0, 0]}
-      />
+      >
+        <meshBasicMaterial map={screen} />
+      </mesh>
       <mesh
         castShadow
         receiveShadow
