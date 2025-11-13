@@ -15,7 +15,7 @@ export default function Highlights(){
             }
         })
 
-        timeLine.to(['.left-column', ".right-column"], {ease:"power1.inOut", opacity:1, y: 0, stagger:0.5, duration: 1})
+        timeLine.to(['.left-column', ".right-column"], {ease:"power1.inOut", opacity:1, y: 0, stagger:1, duration: 1})
     }, [])
 
 
