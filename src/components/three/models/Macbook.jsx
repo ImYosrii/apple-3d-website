@@ -1,3 +1,4 @@
+'use client';
 import { useGLTF, useVideoTexture } from '@react-three/drei'
 import useMacbookStore from '@/store'
 import { useEffect } from 'react'

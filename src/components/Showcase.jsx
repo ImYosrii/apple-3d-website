@@ -1,6 +1,9 @@
+'use client';
 import { useGSAP } from "@gsap/react"
 import { useMediaQuery } from "react-responsive"
 import gsap from "gsap"
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Showcase() {
     const isMobile = useMediaQuery({query: '(max-width: 1024px)'})

@@ -1,8 +1,7 @@
+'use client';
 import { PresentationControls } from "@react-three/drei"
 import { useRef } from "react"
 import gsap from "gsap"
-
-
 import  Macbook16 from "./models/Macbook16"
 import Macbook14 from "./models/Macbook14"
 import { useGSAP } from "@gsap/react"

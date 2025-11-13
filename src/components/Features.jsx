@@ -1,3 +1,4 @@
+'use client';
 import { Canvas } from "@react-three/fiber"
 import Lights from "./three/Lights"
 import { features } from "@/constants"

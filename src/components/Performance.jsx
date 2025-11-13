@@ -1,8 +1,10 @@
+'use client';
 import { useMediaQuery } from "react-responsive"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { performanceImgPositions } from "@/constants"
-
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Performance(){
     const isMobile = useMediaQuery({query:"(max-width: 1024px)"})

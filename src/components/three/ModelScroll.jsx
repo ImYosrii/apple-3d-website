@@ -1,3 +1,4 @@
+'use client';
 import { Html } from "@react-three/drei"
 import { Suspense, useEffect, useRef } from "react"
 import Macbook from "./models/Macbook"
@@ -6,6 +7,8 @@ import useMacbookStore from "@/store"
 import { featureSequence } from "@/constants"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger)
 
 export default function ModelScroll(){
     const groupRef = useRef()

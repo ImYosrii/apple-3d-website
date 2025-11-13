@@ -1,9 +1,7 @@
 'use client';
-
 import clsx from "clsx";
 import { Canvas } from "@react-three/fiber";
 import { useMediaQuery } from "react-responsive";
-
 import useMacbookStore from "@/store";
 import Lights from "./three/Lights";
 import ModelsSwitcher from "./three/ModelsSwitcher";
