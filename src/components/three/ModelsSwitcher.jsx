@@ -1,4 +1,4 @@
-import { OrbitControls, PresentationControls } from "@react-three/drei"
+import { PresentationControls } from "@react-three/drei"
 import { useRef } from "react"
 import gsap from "gsap"
 

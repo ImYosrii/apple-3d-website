@@ -29,7 +29,7 @@ export default function ProductViewer() {
 
             <div className="controls">
                 <p className="info">
-                    Macbook Pro | Available in 14" & 16" in Space Gray & Dark Colors                </p>
+                    Macbook Pro | Available in 14" & 16" in Multiple Colors</p>
 
                 <div className="flex-center gap-5 mt-5">
                     <div className="color-control">
@@ -38,6 +38,15 @@ export default function ProductViewer() {
 
                         <div onClick={()=>setColor("#2e2c2e")} 
                              className={clsx("bg-neutral-900", color === "#2e2c2e" && 'active')}></div>
+                        
+                        <div onClick={()=>setColor("#4c1503")} 
+                             className={clsx("bg-[#4c1503]", color === "#4c1503" && 'active')}></div>
+
+                        <div onClick={()=>setColor("#034c1a")} 
+                             className={clsx("bg-[#034c1a]", color === "#034c1a" && 'active')}></div>
+
+                        <div onClick={()=>setColor("#006975")} 
+                             className={clsx("bg-[#006975]", color === "#006975" && 'active')}></div>
                     </div>
 
                     <div className="size-control">
